@@ -9,10 +9,6 @@ function displayChat(){
     userName = prompt("Digite o seu nome de usuário.")
 // registrar usuário - carregar mensagens 
     registerUser();
-    loadMessages();
-
-    reloadStatus = setInterval(checkStatus, 5000);
-    setInterval(loadMessages, 3000);
 }
 function errorStatus(error){
     console.log(error)
@@ -117,7 +113,11 @@ function errorUser(){
 }
 
 function sentUser(response){
-    console.log(response)
+    console.log(response);
+    loadMessages();
+
+    reloadStatus = setInterval(checkStatus, 5000);
+    setInterval(loadMessages, 3000);
 }
 
 
